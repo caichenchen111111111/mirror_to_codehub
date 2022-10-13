@@ -5,7 +5,7 @@
 > 不要选择`允许生成README文件`  
 
 ![image](https://user-images.githubusercontent.com/29228178/195547639-ae60c6b9-eadf-441c-a95b-0ed42aa33183.png)
-2. 在需要同步的仓库中添加一个Github Action 
+2. 在需要同步的仓库中添加一个Github Action, 将文件中的目标仓库地址替换为自己的
 ```yml 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
         ref: main
     - name: Push to mirror
       run: |
-        git push --mirror -f https://${{ secrets.CODEHUB_USER }}:${{ secrets.CODEHUB_PASSWORD }}@codehub.devcloud.huaweicloud.com/scrum-demo00006/repo_for_mirror.git
+        git push --mirror -f https://${{ secrets.CODEHUB_USER }}:${{ secrets.CODEHUB_PASSWORD }}@codehub.devcloud.huaweicloud.com/foo/bar.git
 ```
 3. 在`Settings->Secrets->Actions`添加`CODEHUB_USER`和`CODEHUB_PASSWORD`
 > `CODEHUB_USER` (在此查看)[https://devcloud.huaweicloud.com/codehub/https], 注意需要将用户明包含的'/'转义成'%2F'，`CODEHUB_PASSWORD`也同样需要转义
