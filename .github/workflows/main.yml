@@ -4,7 +4,7 @@ on:
     - '**'
 name: Push to CodeHub
 jobs:
-  push_to_bitbucket:
+  push_to_codehub:
     name: Push to CodeHub
     if: "!github.event.deleted"
     runs-on: ubuntu-latest
@@ -15,6 +15,5 @@ jobs:
         ref: main
     - name: Push to mirror
       run: |
-        find .git
         git push --mirror -f https://${{ secrets.CODEHUB_USER }}:${{ secrets.CODEHUB_PASSWORD }}@codehub.devcloud.huaweicloud.com/scrum-demo00006/repo_for_mirror.git
       
