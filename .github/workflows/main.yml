@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-    - *
+     - main
 name: Push to CodeHub
 jobs:
   push_to_bitbucket:
