@@ -24,6 +24,7 @@ jobs:
         ref: main
     - name: Push to mirror
       run: |
+        git fetch -pu +refs/*:refs/* 
         git push --mirror -f https://${{ secrets.CODEHUB_USER }}:${{ secrets.CODEHUB_PASSWORD }}@codehub.devcloud.huaweicloud.com/foo/bar.git
 ```
 3. 在`Settings->Secrets->Actions`添加`CODEHUB_USER`和`CODEHUB_PASSWORD`
