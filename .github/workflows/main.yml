@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v2-beta
       with:
         fetch-depth: 0 # Zero indicates all history
-        ref: master
+        ref: main
     - name: Push to mirror
       uses: reload/git-push-mirror-action@master
       with:
