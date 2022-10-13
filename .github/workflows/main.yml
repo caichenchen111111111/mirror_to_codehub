@@ -14,6 +14,6 @@ jobs:
         fetch-depth: 0 # Zero indicates all history
         ref: main
     - name: Push to mirror
-      uses: reload/git-push-mirror-action@master
+      uses: reload/git-push-mirror-action@main
       with:
         args: https://${{ secrets.CODEHUB_USER }}:${{ secrets.CODEHUB_PASSWORD }}@codehub.devcloud.huaweicloud.com/scrum-demo00006/repo_for_mirror.git
